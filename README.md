@@ -50,6 +50,6 @@ O to trochę chodzi. Będę bardzo dumny z każdej osoby która podczas eventu n
 |       Mon        |        Tue        |       Wed        |        Thu        |            Fri            |           Sat            |          Sun           |
 | :--------------: | :---------------: | :--------------: | :---------------: | :-----------------------: | :----------------------: | :--------------------: |
 |                  |  1<br/>Gahlammon  |  2<br/>acki022   |  3<br/>kris659    |            4              |  5<br/>Maciej Łachut     | 6<br/>igorekkdziorek   |
-|   7<br/>Nesia    |  8<br/>Xenon863   |  9<br/>Pojemnik  |  10<br/>Mudziok   |      11<br/>Myster        |      12<br/>661217       |       13<br/>dry       |
+|   7<br/>Nesia    |  8<br/>Xenon863   |  9<br/>Pojemnik  |  10<br/>Mudziok   |      11<br/>Myster        |      12<br/>661217       |       13<br/>shamotte       |
 |  14<br/>Liniux   |        15         |  16<br/>Maciej   |  17<br/>pwalig    |      18<br/>Entink        |      19<br/>mm_102       |     20<br/>blocky      |
 |   21<br/>Ched    |  22<br/>Stevens   |                  |                   |                           |                          |                        |
