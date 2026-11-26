@@ -1,5 +1,10 @@
 extends CharacterBody3D
 
+@export_category("Variables")
+@export var shoot_speed:float = 10.0
+@export var Y_value_teleport:float = -30.0
+
+@export_group("Other")
 @export var shoot_timer:Timer
 @export var shoot_point:Node3D
 @export var projectile:PackedScene
@@ -11,10 +16,12 @@ var gravity:Vector3 = Vector3(0,-12,0)
 var SENSITIVITY:float = 1
 
 var can_shoot:bool = true
-@export var shoot_speed:float = 3
+
 
 @export var head:Node3D
 @export var camera:Camera3D
+
+@export var level_ui:Label
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -28,6 +35,9 @@ func _unhandled_input(event):
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	
+	level_ui.text = "Level: " +str(GlobalVars.get_level())
+	
 	if not is_on_floor():
 		velocity += gravity * delta
 

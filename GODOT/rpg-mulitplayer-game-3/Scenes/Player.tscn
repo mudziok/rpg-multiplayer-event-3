@@ -8,14 +8,14 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=37705661 node_paths=PackedStringArray("shoot_timer", "shoot_point", "head", "camera")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=37705661 node_paths=PackedStringArray("shoot_timer", "shoot_point", "head", "camera", "level_ui")]
 script = ExtResource("1_rpqav")
 shoot_timer = NodePath("ShootCooldownTimer")
 shoot_point = NodePath("Head/Camera3D/CSGBox3D/ShootPoint")
 projectile = ExtResource("2_gntrk")
-shoot_speed = 10.0
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
+level_ui = NodePath("CanvasLayer/Control/Level UI")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1344355733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -42,3 +42,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6708764)
 [node name="ShootCooldownTimer" type="Timer" parent="." unique_id=366538688]
 wait_time = 0.25
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1925956321]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1381679210]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level UI" type="Label" parent="CanvasLayer/Control" unique_id=1283441235]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "Level: 0"

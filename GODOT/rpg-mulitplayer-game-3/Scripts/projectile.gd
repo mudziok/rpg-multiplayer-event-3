@@ -43,13 +43,23 @@ func _re_add_collisions():
 # połączenie kul
 func _weld_balls(body:Node3D):
 	if body is RigidBody3D and body != self:
-		var dir:Vector3 = self.global_position.direction_to(body.global_position)
-		global_position = ( ( self.global_position + body.global_position ) * 0.5 ) - dir*0.45
-		
-		var joint_new = Generic6DOFJoint3D.new()
-		get_tree().current_scene.add_child(joint_new)
-		joint_new.global_position = ( self.global_position + body.global_position ) * 0.5
-		joint_new.node_a = joint_new.get_path_to(self)
-		joint_new.node_b = joint_new.get_path_to(body)
+		if body.physics_material_override == null:
+			var dir:Vector3 = self.global_position.direction_to(body.global_position)
+			global_position = ( ( self.global_position + body.global_position ) * 0.5 ) - dir*0.45
+			var joint_new = Generic6DOFJoint3D.new()
+			get_tree().current_scene.add_child(joint_new)
+			joint_new.global_position = ( self.global_position + body.global_position ) * 0.5
+			joint_new.node_a = joint_new.get_path_to(self)
+			joint_new.node_b = joint_new.get_path_to(body)
+		else:
+			if body.physics_material_override.bounce != 10:
+				var dir:Vector3 = self.global_position.direction_to(body.global_position)
+				global_position = ( ( self.global_position + body.global_position ) * 0.5 ) - dir*0.45
+				
+				var joint_new = Generic6DOFJoint3D.new()
+				get_tree().current_scene.add_child(joint_new)
+				joint_new.global_position = ( self.global_position + body.global_position ) * 0.5
+				joint_new.node_a = joint_new.get_path_to(self)
+				joint_new.node_b = joint_new.get_path_to(body)
 		
 		

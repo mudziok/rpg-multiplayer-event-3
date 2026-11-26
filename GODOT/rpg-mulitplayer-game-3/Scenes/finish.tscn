@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://ngkdsn0se0bw" path="res://Assets/gold_material.tres" id="3_bgj60"]
 [ext_resource type="Material" uid="uid://b0qleqs4u51ji" path="res://Assets/blue_material.tres" id="4_6tqh2"]
 [ext_resource type="Material" uid="uid://bls4oaleiudrq" path="res://Assets/green_material.tres" id="5_oub70"]
+[ext_resource type="Material" uid="uid://bexa4h6yswe3e" path="res://Assets/purple_material.tres" id="6_t38wq"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bgj60"]
 height = 0.3
@@ -45,6 +46,10 @@ size = Vector3(0.1, 0.1, 0.1)
 material = ExtResource("1_nv66a")
 size = Vector3(0.1, 0.1, 0.1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ogsmx"]
+material = ExtResource("6_t38wq")
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="FinishPlate" type="Node3D" unique_id=1091909090]
 script = ExtResource("1_o6pr6")
 
@@ -64,7 +69,7 @@ shape = SubResource("CylinderShape3D_bgj60")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=131350416]
 emitting = false
-amount = 30
+amount = 60
 lifetime = 3.0
 one_shot = true
 explosiveness = 0.75
@@ -97,3 +102,12 @@ one_shot = true
 explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_6tqh2")
 draw_pass_1 = SubResource("BoxMesh_avoxp")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="." unique_id=253455253]
+emitting = false
+amount = 30
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.75
+process_material = SubResource("ParticleProcessMaterial_6tqh2")
+draw_pass_1 = SubResource("BoxMesh_ogsmx")

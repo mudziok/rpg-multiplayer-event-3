@@ -6,6 +6,7 @@
 script = ExtResource("1_ctk0y")
 
 [node name="Button" type="Button" parent="." unique_id=934621137]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 41.0
+offset_bottom = 31.0
+size_flags_vertical = 4
 text = "Play"

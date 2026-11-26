@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalVars="*uid://e7gtg1se66fr"
 
+[display]
+
+window/size/mode=2
+
 [input]
 
 right={
