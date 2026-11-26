@@ -14,7 +14,7 @@ radius = 0.55
 [sub_resource type="SphereShape3D" id="SphereShape3D_yr2qt"]
 radius = 0.51
 
-[node name="RigidBody3D" type="RigidBody3D" unique_id=1222932448 node_paths=PackedStringArray("player_col", "player_timer", "player_first_timer", "ball_col")]
+[node name="ProjectileBall" type="RigidBody3D" unique_id=1222932448 node_paths=PackedStringArray("player_col", "player_timer", "player_first_timer", "ball_col")]
 mass = 0.1
 physics_material_override = ExtResource("1_tl4hk")
 script = ExtResource("1_yr2qt")

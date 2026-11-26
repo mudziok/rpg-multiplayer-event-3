@@ -39,7 +39,10 @@ func _physics_process(delta: float) -> void:
 		shoot_timer.start()
 		# print("shoot", randi_range(10,30))
 		_shoot()
-
+	
+	#if Input.is_action_just_pressed("push"):
+		
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -53,7 +56,8 @@ func _physics_process(delta: float) -> void:
 	
 	# odbijanie się od powietrza
 	if global_position.y < -10.0:
-		velocity.y = 20.0
+		velocity = Vector3.ZERO
+		global_position = $"../StartPoint".global_position
 	
 	move_and_slide()
 
