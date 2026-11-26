@@ -6,7 +6,6 @@
 bounce = 10.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xjwb"]
-size = Vector3(0.3305664, 7.992737, 9)
 
 [node name="BouncyFloor" type="RigidBody3D" unique_id=1675743038]
 physics_material_override = SubResource("PhysicsMaterial_khq7w")

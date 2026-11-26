@@ -31,6 +31,9 @@ albedo_color = Color(0.29411766, 0.2627451, 0.3764706, 0.039215688)
 material = SubResource("StandardMaterial3D_41eeo")
 size = Vector2(500, 500)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i334n"]
+size = Vector3(1, 3, 1)
+
 [node name="Node3D" type="Node3D" unique_id=1915225713]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2140035972]
@@ -171,6 +174,17 @@ mesh = SubResource("PlaneMesh_4tmid")
 [node name="BouncyFloor" parent="." unique_id=1675743038 instance=ExtResource("6_4tmid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
+[node name="BouncyFloor2" parent="." unique_id=426748402 instance=ExtResource("6_4tmid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+
+[node name="CollisionShape3D" parent="BouncyFloor2" index="0" unique_id=278673089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_i334n")
+
+[node name="CSGBox3D" parent="BouncyFloor2" index="1" unique_id=1738417593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(1, 3, 1)
+
 [node name="LockDoor" parent="." unique_id=825964210 instance=ExtResource("7_i334n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.850325, 2.5000057, -3.2858143)
 
@@ -183,4 +197,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9111192, 6)
 [node name="Button3" parent="LockDoor/Buttons" parent_id_path=PackedInt32Array(825964210, 896808931) index="2" unique_id=877702837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9111192, 9)
 
+[editable path="BouncyFloor"]
+[editable path="BouncyFloor2"]
 [editable path="LockDoor"]
