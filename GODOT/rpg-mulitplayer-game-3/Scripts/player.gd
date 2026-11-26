@@ -52,6 +52,12 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("reset"):
 		GlobalVars.reload_level()
+	
+	if Input.is_action_just_pressed("clip"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 	
 	# Get the input direction and handle the movement/deceleration.
