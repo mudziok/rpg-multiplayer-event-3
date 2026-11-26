@@ -40,7 +40,8 @@ func _physics_process(delta: float) -> void:
 		# print("shoot", randi_range(10,30))
 		_shoot()
 	
-	#if Input.is_action_just_pressed("push"):
+	if Input.is_action_just_pressed("reset"):
+		GlobalVars.reload_level()
 		
 	
 	# Get the input direction and handle the movement/deceleration.
