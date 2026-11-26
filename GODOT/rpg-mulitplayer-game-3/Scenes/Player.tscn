@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://i8fivsvk0s5g"]
+
+[ext_resource type="Script" uid="uid://ct2rb57h3hrlm" path="res://Scripts/player.gd" id="1_rpqav"]
+[ext_resource type="PackedScene" uid="uid://bolavq2ip0m46" path="res://Scenes/projectile.tscn" id="2_gntrk"]
+[ext_resource type="Material" uid="uid://ngkdsn0se0bw" path="res://Assets/gold_material.tres" id="2_kyqiw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qbkls"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=37705661 node_paths=PackedStringArray("shoot_timer", "shoot_point", "head", "camera")]
+script = ExtResource("1_rpqav")
+shoot_timer = NodePath("ShootCooldownTimer")
+shoot_point = NodePath("Head/Camera3D/CSGBox3D/ShootPoint")
+projectile = ExtResource("2_gntrk")
+shoot_speed = 10.0
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1344355733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qbkls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1862481592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("2_kyqiw")
+mesh = SubResource("CapsuleMesh_rpqav")
+
+[node name="Head" type="Node3D" parent="." unique_id=769739940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=491000057]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Head/Camera3D" unique_id=459699988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32546818, -0.49232507, -0.2942412)
+material_override = ExtResource("2_kyqiw")
+size = Vector3(0.22705078, 0.2635498, 0.9096985)
+
+[node name="ShootPoint" type="Node3D" parent="Head/Camera3D/CSGBox3D" unique_id=1242511375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6708764)
+
+[node name="ShootCooldownTimer" type="Timer" parent="." unique_id=366538688]
+wait_time = 0.25
+one_shot = true
