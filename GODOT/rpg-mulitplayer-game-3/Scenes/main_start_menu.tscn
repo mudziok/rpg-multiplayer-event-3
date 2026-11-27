@@ -1,12 +1,89 @@
 [gd_scene format=3 uid="uid://kdny16e80a1x"]
 
 [ext_resource type="Script" uid="uid://b3sanh5ja8ysk" path="res://Scripts/main_start_menu.gd" id="1_ctk0y"]
+[ext_resource type="Texture2D" uid="uid://m1bcrrpgbsmw" path="res://Assets/Sprites/Menu.png" id="2_nrr0a"]
+[ext_resource type="Texture2D" uid="uid://c38oi06qxweu4" path="res://Assets/Sprites/Black_bg.png" id="2_xhogq"]
+[ext_resource type="Texture2D" uid="uid://c0ooo5gwk2j5v" path="res://Assets/Sprites/Title.png" id="3_xxgw3"]
+[ext_resource type="Texture2D" uid="uid://ckv6dj7kpg3h3" path="res://Assets/Sprites/BALLS_sprite_sheet.png" id="4_bap0r"]
+[ext_resource type="Texture2D" uid="uid://cd5alsfdrri5g" path="res://Assets/Sprites/Menu_start_button.png" id="6_m3h2o"]
+[ext_resource type="Texture2D" uid="uid://iislnkm8u3d5" path="res://Assets/Sprites/Menu_start_button_clicked.png" id="7_1lagc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhogq"]
+atlas = ExtResource("4_bap0r")
+region = Rect2(0, 0, 268, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3h2o"]
+atlas = ExtResource("4_bap0r")
+region = Rect2(268, 0, 268, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lagc"]
+atlas = ExtResource("4_bap0r")
+region = Rect2(536, 0, 268, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1b3c"]
+atlas = ExtResource("4_bap0r")
+region = Rect2(804, 0, 268, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up5i7"]
+atlas = ExtResource("4_bap0r")
+region = Rect2(1072, 0, 268, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0fmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhogq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3h2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lagc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1b3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up5i7")
+}],
+"loop": true,
+"name": &"Menu_Balls",
+"speed": 7.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=1045811294]
+position = Vector2(200, 80)
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_ctk0y")
 
-[node name="Button" type="Button" parent="." unique_id=934621137]
-offset_right = 41.0
-offset_bottom = 31.0
+[node name="BlackBg" type="Sprite2D" parent="." unique_id=651328875]
+position = Vector2(578.46155, 350.76923)
+scale = Vector2(1.3999991, 1.3999991)
+texture = ExtResource("2_xhogq")
+
+[node name="Menu" type="Sprite2D" parent="." unique_id=689014653]
+position = Vector2(576.00006, 328.00003)
+scale = Vector2(1.07, 1.07)
+texture = ExtResource("2_nrr0a")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1269577823]
+position = Vector2(320, 112)
+texture = ExtResource("3_xxgw3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1686155465]
+texture_filter = 1
+position = Vector2(336, 256)
+scale = Vector2(1.52, 1.52)
+sprite_frames = SubResource("SpriteFrames_h0fmr")
+animation = &"Menu_Balls"
+frame_progress = 0.07286081
+
+[node name="Button" type="TextureButton" parent="." unique_id=2043481393]
+offset_left = 231.53848
+offset_top = 378.46152
+offset_right = 500.53848
+offset_bottom = 515.46155
+scale = Vector2(0.80615306, 0.80615306)
 size_flags_vertical = 4
-text = "Play"
+texture_normal = ExtResource("6_m3h2o")
+texture_pressed = ExtResource("7_1lagc")

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://rymjpxoptp7j"]
 
+[ext_resource type="Texture2D" uid="uid://i3key53kcoih" path="res://Assets/Sprites/baller end_screen.png" id="1_22kaw"]
+
 [node name="Node2D" type="Node2D" unique_id=1473097183]
 
-[node name="Label" type="Label" parent="." unique_id=1274030227]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "end"
+[node name="BallerEndScreen" type="Sprite2D" parent="." unique_id=374279183]
+position = Vector2(566.00006, 331.00003)
+scale = Vector2(1.1599988, 1.1599988)
+texture = ExtResource("1_22kaw")

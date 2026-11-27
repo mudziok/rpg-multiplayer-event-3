@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var player_timer:Timer
 @export var player_first_timer:Timer
 @export var ball_col:Area3D
+@onready var sfx_ball_weld: AudioStreamPlayer = $SFX_ball_weld
 var player:Node3D = null
 var fired:bool = false
 # Called when the node enters the scene tree for the first time.
@@ -53,6 +54,7 @@ func _weld_balls(body:Node3D):
 			joint_new.node_b = joint_new.get_path_to(body)
 		else:
 			if body.physics_material_override.bounce != 10:
+				sfx_ball_weld.play()
 				var dir:Vector3 = self.global_position.direction_to(body.global_position)
 				global_position = ( ( self.global_position + body.global_position ) * 0.5 ) - dir*0.45
 				

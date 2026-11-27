@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bolavq2ip0m46"]
 
-[ext_resource type="Material" uid="uid://ngkdsn0se0bw" path="res://Assets/gold_material.tres" id="1_f8cdk"]
 [ext_resource type="PhysicsMaterial" uid="uid://clr6ea2hkes5b" path="res://Assets/ball_physics.tres" id="1_tl4hk"]
 [ext_resource type="Script" uid="uid://cph32d5ylxf6r" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Material" uid="uid://ci3ocl3p0sn4y" path="res://Assets/red_material_hard.tres" id="3_tl4hk"]
+[ext_resource type="AudioStream" uid="uid://ctux4xps5pj2s" path="res://Sounds/Ball_weld.mp3" id="4_d4467"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_at5ip"]
 
@@ -28,7 +29,7 @@ shape = SubResource("SphereShape3D_at5ip")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=137545777]
 mesh = SubResource("SphereMesh_at5ip")
-surface_material_override/0 = ExtResource("1_f8cdk")
+surface_material_override/0 = ExtResource("3_tl4hk")
 
 [node name="player_collision" type="Area3D" parent="." unique_id=1529708352]
 
@@ -47,3 +48,6 @@ one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ball_collision" unique_id=2128812232]
 shape = SubResource("SphereShape3D_yr2qt")
+
+[node name="SFX_ball_weld" type="AudioStreamPlayer" parent="." unique_id=1135774553]
+stream = ExtResource("4_d4467")
