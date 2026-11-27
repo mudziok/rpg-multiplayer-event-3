@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bolavq2ip0m46"]
+
+[ext_resource type="Material" uid="uid://ngkdsn0se0bw" path="res://Assets/gold_material.tres" id="1_f8cdk"]
+[ext_resource type="PhysicsMaterial" uid="uid://clr6ea2hkes5b" path="res://Assets/ball_physics.tres" id="1_tl4hk"]
+[ext_resource type="Script" uid="uid://cph32d5ylxf6r" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_at5ip"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_at5ip"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f8cdk"]
+radius = 0.55
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yr2qt"]
+radius = 0.51
+
+[node name="ProjectileBall" type="RigidBody3D" unique_id=1222932448 node_paths=PackedStringArray("player_col", "player_timer", "player_first_timer", "ball_col")]
+mass = 0.1
+physics_material_override = ExtResource("1_tl4hk")
+script = ExtResource("1_yr2qt")
+player_col = NodePath("player_collision")
+player_timer = NodePath("player_collision/PlayerCollisionTimer")
+player_first_timer = NodePath("player_collision/PlayerFirstCollisionTimer")
+ball_col = NodePath("ball_collision")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1571481876]
+shape = SubResource("SphereShape3D_at5ip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=137545777]
+mesh = SubResource("SphereMesh_at5ip")
+surface_material_override/0 = ExtResource("1_f8cdk")
+
+[node name="player_collision" type="Area3D" parent="." unique_id=1529708352]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player_collision" unique_id=1056888367]
+shape = SubResource("SphereShape3D_f8cdk")
+
+[node name="PlayerCollisionTimer" type="Timer" parent="player_collision" unique_id=1061542107]
+wait_time = 20.0
+one_shot = true
+
+[node name="PlayerFirstCollisionTimer" type="Timer" parent="player_collision" unique_id=302883605]
+wait_time = 0.2
+one_shot = true
+
+[node name="ball_collision" type="Area3D" parent="." unique_id=984455145]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ball_collision" unique_id=2128812232]
+shape = SubResource("SphereShape3D_yr2qt")

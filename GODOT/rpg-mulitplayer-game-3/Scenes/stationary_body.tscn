@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brtotceoewapw"]
+
+[ext_resource type="Material" uid="uid://b0qleqs4u51ji" path="res://Assets/blue_material.tres" id="1_1mh3m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iye45"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1mh3m"]
+
+[node name="StationaryBall" type="RigidBody3D" unique_id=546424361]
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=294746191]
+shape = SubResource("SphereShape3D_iye45")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=358119557]
+material_override = ExtResource("1_1mh3m")
+mesh = SubResource("SphereMesh_1mh3m")
+surface_material_override/0 = ExtResource("1_1mh3m")
