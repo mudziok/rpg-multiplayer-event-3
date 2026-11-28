@@ -8,9 +8,11 @@ extends CharacterBody3D
 @export var shoot_timer:Timer
 @export var shoot_point:Node3D
 @export var projectile:PackedScene
+@onready var sfx_ball_throw: AudioStreamPlayer = $SFX_BallThrow
 	
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+
 
 var gravity:Vector3 = Vector3(0,-12,0)
 var SENSITIVITY:float = 1
@@ -79,6 +81,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _shoot():
+	sfx_ball_throw.play()
 	print("shoot")
 	if projectile!=null:
 		var projectile_new = projectile.instantiate()

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ere0rv4us1kg"]
+
+[ext_resource type="Texture2D" uid="uid://bvsntsr47o548" path="res://Assets/Sprites/Baller_jumpscare.png" id="1_0rm4b"]
+
+[node name="Node2D" type="Control" unique_id=1210365510]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BallerJumpscare" type="Sprite2D" parent="." unique_id=1218664811]
+position = Vector2(566.00006, 334)
+scale = Vector2(1.8399999, 1.8399999)
+texture = ExtResource("1_0rm4b")

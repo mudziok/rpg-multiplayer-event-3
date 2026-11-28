@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://b0qleqs4u51ji" path="res://Assets/blue_material.tres" id="4_6tqh2"]
 [ext_resource type="Material" uid="uid://bls4oaleiudrq" path="res://Assets/green_material.tres" id="5_oub70"]
 [ext_resource type="Material" uid="uid://bexa4h6yswe3e" path="res://Assets/purple_material.tres" id="6_t38wq"]
+[ext_resource type="AudioStream" uid="uid://bpu5jxqe7yxmy" path="res://Sounds/Baller_sound_effect.mp3" id="7_3vmem"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bgj60"]
 height = 0.3
@@ -111,3 +112,6 @@ one_shot = true
 explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_6tqh2")
 draw_pass_1 = SubResource("BoxMesh_ogsmx")
+
+[node name="SFX_Finish" type="AudioStreamPlayer" parent="." unique_id=1982299610]
+stream = ExtResource("7_3vmem")
